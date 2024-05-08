@@ -1,0 +1,62 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Dashboard</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include any other necessary CSS files -->
+
+    <!-- Include D3.js library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Visualization Dashboard</h1>
+        <!-- Filters -->
+        <div class="row">
+            <div class="col-md-3">
+                <label for="end_year_filter">End Year:</label>
+                <input type="text" id="end_year_filter" class="form-control">
+            </div>
+            <!-- Add other filters here -->
+        </div>
+        <hr>
+        <!-- Visualization area -->
+        <div id="visualization"></div>
+    </div>
+
+    <!-- Include Bootstrap and other necessary JS files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Fetch data from Django backend using AJAX
+        $.ajax({
+            url: "{% url 'dashboard_data' %}", // Update with the URL to fetch data from Django backend
+            dataType: "json",
+            success: function(data) {
+                // Visualize data using D3.js or other charting libraries
+                var svg = d3.select("#visualization")
+                            .append("svg")
+                            .attr("width", 800)
+                            .attr("height", 400);
+
+                // Example: Visualize data as bars
+                svg.selectAll("rect")
+                    .data(data)
+                    .enter()
+                    .append("rect")
+                    .attr("x", (d, i) => i * 40)
+                    .attr("y", (d) => 400 - d.intensity * 10)
+                    .attr("width", 30)
+                    .attr("height", (d) => d.intensity * 10)
+                    .attr("fill", "blue");
+            }
+        });
+    </script>
+</body>
+</html>
+ -->
